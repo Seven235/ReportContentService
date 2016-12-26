@@ -14,6 +14,10 @@ public class ReportContentServiceImpl implements ReportContentService{
 	}
 
 	public boolean reportComment(String userId, String commentId) {
-		return true;
+		ReportDAO reportDao=new ReportDAOImpl();
+		if(reportDao.ReportComment(userId, commentId)){
+			return true;
+		}
+		return false;
 	}
 }
