@@ -6,10 +6,10 @@ import cn.edu.bjtu.weibo.service.ReportContentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-@Service
+@Service("reportContentService")
 public class ReportContentServiceImpl implements ReportContentService{
 	@Autowired
-	ReportDAO reportDAO;
+	private ReportDAO reportDAO;
 	
 	public boolean reportWeibo(String userId, String weiboId) {
 		if(reportDAO.ReportWeibo(weiboId, userId)){
